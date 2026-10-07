@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mi objeto 3D en Realidad Aumentada</title>
@@ -17,24 +16,108 @@
 
 <body>
 
-    <!-- Escena de Realidad Aumentada -->
     <a-scene
         embedded
         arjs="sourceType: webcam;">
 
-        <!-- Marcador -->
+        <!-- ========================= -->
+        <!-- MARCADOR HIRO             -->
+        <!-- ========================= -->
+
         <a-marker preset="hiro">
 
-            <!-- Cubo de prueba -->
-            <a-box
-                position="0 0.5 0"
-                rotation="0 45 0"
-                color="red">
-            </a-box>
+            <!-- ========================= -->
+            <!-- PISO / REFERENCIA VISUAL -->
+            <!-- ========================= -->
+
+            <a-plane
+                position="0 0 0"
+                rotation="-90 0 0"
+                width="3"
+                height="3"
+                color="#555555">
+            </a-plane>
+
+
+            <!-- ========================= -->
+            <!-- ROBOT 3D                  -->
+            <!-- ========================= -->
+
+            <a-entity id="robot" position="0 0 0">
+
+                <!-- CABEZA -->
+                <a-box
+                    position="0 2.1 0"
+                    width="0.8"
+                    height="0.7"
+                    depth="0.7"
+                    color="#2196F3">
+                </a-box>
+
+                <!-- OJO IZQUIERDO -->
+                <a-sphere
+                    position="-0.18 2.2 0.36"
+                    radius="0.08"
+                    color="white">
+                </a-sphere>
+
+                <!-- OJO DERECHO -->
+                <a-sphere
+                    position="0.18 2.2 0.36"
+                    radius="0.08"
+                    color="white">
+                </a-sphere>
+
+                <!-- CUERPO -->
+                <a-box
+                    position="0 1.25 0"
+                    width="1"
+                    height="1.1"
+                    depth="0.6"
+                    color="#1565C0">
+                </a-box>
+
+                <!-- BRAZO IZQUIERDO -->
+                <a-box
+                    position="-0.7 1.3 0"
+                    width="0.3"
+                    height="1"
+                    depth="0.3"
+                    color="#42A5F5">
+                </a-box>
+
+                <!-- BRAZO DERECHO -->
+                <a-box
+                    position="0.7 1.3 0"
+                    width="0.3"
+                    height="1"
+                    depth="0.3"
+                    color="#42A5F5">
+                </a-box>
+
+                <!-- PIERNA IZQUIERDA -->
+                <a-box
+                    position="-0.3 0.35 0"
+                    width="0.35"
+                    height="0.8"
+                    depth="0.35"
+                    color="#0D47A1">
+                </a-box>
+
+                <!-- PIERNA DERECHA -->
+                <a-box
+                    position="0.3 0.35 0"
+                    width="0.35"
+                    height="0.8"
+                    depth="0.35"
+                    color="#0D47A1">
+                </a-box>
+
+            </a-entity>
 
         </a-marker>
 
-        <!-- Cámara -->
+        <!-- CÁMARA -->
         <a-entity camera></a-entity>
 
     </a-scene>
